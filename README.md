@@ -32,7 +32,9 @@ Free Version of AviAjvi but with a name that makes sense
   
 ## Note
   
-This does override rocket item/vehicle blacklisting. However, it does work with the max spawn limit.
+SpawnPermissions works by overriding the default rocket /i and /v commands.
+  
+Also, SpawnPermissions does override rocket item/vehicle blacklisting. However, it does work with the max spawn limit.
   
 ## Permissions
   

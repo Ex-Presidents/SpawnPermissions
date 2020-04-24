@@ -18,7 +18,7 @@ namespace SpawnPermissions.Commands
         public string Name => "v";
         public string Help => "Give yourself a vehicle";
         public string Syntax => "<id>";
-        public List<string> Aliases => new List<string>();
+        public List<string> Aliases => new List<string> { "vehicle" };
         public List<string> Permissions => new List<string>
         {
             "rocket.v",
