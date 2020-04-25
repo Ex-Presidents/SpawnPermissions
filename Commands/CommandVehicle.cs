@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Rocket.API;
 using Rocket.API.Extensions;
@@ -50,7 +51,9 @@ namespace SpawnPermissions.Commands
                     throw new WrongUsageOfCommandException(caller, this);
                 }
 
-                VehicleMatch = (VehicleAsset)Assets.find(EAssetType.VEHICLE).FirstOrDefault(veh => veh.name.ToUpperInvariant().Contains(VehicleString.ToUpperInvariant()));
+                VehicleMatch = Assets.find(EAssetType.VEHICLE).Cast<VehicleAsset>()
+                    .Where(veh => !String.IsNullOrEmpty(veh.vehicleName))
+                    .FirstOrDefault(veh => veh.vehicleName.ToUpperInvariant().Contains(VehicleString.ToUpperInvariant()));
 
                 if(VehicleMatch != null)
                     VehicleID = VehicleMatch.id;

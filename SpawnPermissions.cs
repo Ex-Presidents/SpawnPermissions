@@ -6,9 +6,11 @@ using Rocket.Core.Commands;
 using Rocket.Core.Logging;
 using Rocket.Core.Plugins;
 using Rocket.Unturned.Player;
+using SDG.Unturned;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using System.Threading;
 
@@ -26,10 +28,10 @@ namespace SpawnPermissions
 
         protected override void Load()
         {
+            Instance = this;
+
             Logger.Log("If you need help please go to https://github.com/Ex-Presidents/SpawnPermissions", ConsoleColor.Yellow);
             Logger.Log("There is documentation available and you can create issues if necessary.", ConsoleColor.Yellow);
-
-            Instance = this;
         }
 
         protected override void Unload()

@@ -50,21 +50,20 @@ namespace SpawnPermissions.Commands
                     UnturnedChat.Say(Player, U.Translate("command_generic_invalid_parameter"));
                     throw new WrongUsageOfCommandException(caller, this);
                 }
+                ItemAsset = Assets.find(EAssetType.ITEM).Cast<ItemAsset>()
+                    .Where(i => !String.IsNullOrEmpty(i.itemName)).OrderBy(i => i.itemName.Length)
+                    .FirstOrDefault(i => i.itemName.ToUpperInvariant().Contains(ItemString.ToUpperInvariant()));
 
-                List<ItemAsset> sortedAssets = new List<ItemAsset>(Assets.find(EAssetType.ITEM).Cast<ItemAsset>());
-                ItemAsset MatchingAsset = sortedAssets.OrderBy(i => i.itemName.Length).FirstOrDefault(i => i.itemName.ToUpperInvariant().Contains(ItemString.ToUpperInvariant()));
-                
-                if (MatchingAsset == null)
+                if (ItemAsset == null)
                 {
                     UnturnedChat.Say(Player, U.Translate("command_generic_invalid_parameter"));
                     throw new WrongUsageOfCommandException(caller, this);
                 }
 
-                ItemID = MatchingAsset.id;
-                ItemAsset = MatchingAsset;
+                ItemID = ItemAsset.id;
             }
 
-            if(ItemAsset == null)
+            if (ItemAsset == null)
                 ItemAsset = (ItemAsset)Assets.find(EAssetType.ITEM, ItemID);
 
             if (command.Length == 2 && !byte.TryParse(command[1].ToString(), out ItemAmount) || ItemAsset == null)
