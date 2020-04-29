@@ -3,6 +3,8 @@ Free Version of AviAjvi but with a name that makes sense
 
 ![](https://i.imgur.com/ZNxWGDs.png)
 
+https://iceplugins.xyz/SpawnPermissions
+
 ## Features
 
 - Permissions based

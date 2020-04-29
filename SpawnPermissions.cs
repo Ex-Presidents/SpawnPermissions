@@ -30,7 +30,7 @@ namespace SpawnPermissions
         {
             Instance = this;
 
-            Logger.Log("If you need help please go to https://github.com/Ex-Presidents/SpawnPermissions", ConsoleColor.Yellow);
+            Logger.Log("If you need help please go to https://github.com/IcePlugins/SpawnPermissions", ConsoleColor.Yellow);
             Logger.Log("There is documentation available and you can create issues if necessary.", ConsoleColor.Yellow);
         }
 

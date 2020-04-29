@@ -1,0 +1,10 @@
+language: csharp
+solution: SpawnPermissions.sln
+deploy:
+  provider: releases
+  api_key:
+    secure: tFci5haGHoJKOHz4ly2PkVgWXOHOvDgX48FC7jSTDG+tKr9AbFnpLBOlbod0y1K3OwwJ1/ycj/ZYQulewEIp89X3xMwHbHz7TnaROxrC6xdEz92ZfN+GxM8ilAXvz+PMjHFAxtL3hfo0wutorjgqiqEL4MIoHG1wsb/6rSUNphhALaoKUgFCGc+BI+M7eBvzBnsh8m69ckFc08D+E28nGFTaNI5y8sOCJgFKRdk7YorttLrpLBBTFIvhaiWuWjHFoSlEKWzB2XMPkvyjcg+jLO2sf5baJBGUzQbWkGhHVXVYhqlDghX2FYUW3mNITgnNom/mqg5pnCqa7MhFP0MzIMzRSnGZOofJ0ZJdnPkJjM52nWN1MFlRySlSERpjC3pJES9wv1VhRmul92DAQ79bX/MdyZYV8TbwhLa99NcPcAZqFTTy4Gvx6nV9ED9qiZEW6NIj5PHFg8CK/mYkfTCjp89qVdog1yU/YzhJl/RMOfl3yE3cv7aUnsTvteTBE22k+8Rz3wXFE/QvftPsrKFeA35zhNUUR9MhzpTTACPBX2ALEQ99Pu/VpjUDq9p4qoJeWiB1Yd/frnduTn/h/Fm5PSdcdrkcOC3ux7qYAVgMPlN/j9UFiIskqlmlG/DFYwWjMGxKDkXddYY4YNl7r1AUCaRmXGfKwv5M2c40B/GKANw=
+  file: 'bin/Release/SpawnPermissions.dll'
+  on:
+    tags: true
+  skip_cleanup: true
